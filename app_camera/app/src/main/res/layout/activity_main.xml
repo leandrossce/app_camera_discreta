@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!-- Botão para iniciar gravação com câmera traseira -->
+
+    <!-- Botão para iniciar gravação com câmera frontal -->
+
+    <Button
+        android:id="@+id/button_rear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_camera_traseira" />
+
+    <Button
+        android:id="@+id/button_front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_camera_frontal" />
+
+    <!-- Botão para parar gravação -->
+    <Button
+        android:id="@+id/button_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botao_parar_gravacao" />
+
+    <!-- Botão para doação -->
+    <Button
+        android:id="@+id/button_donate"
+        android:layout_width="wrap_content"
+        android:layout_height="447dp"
+        android:text="@string/botao_pix_desenvolvedor" />
+
+</LinearLayout>

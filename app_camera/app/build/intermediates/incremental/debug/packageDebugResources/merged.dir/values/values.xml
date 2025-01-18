@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#EADFDF</color>
+    <string name="app_name">app_camera</string>
+    <string name="botao_camera_frontal">FRONTAL</string>
+    <string name="botao_camera_traseira">TRASEIRA</string>
+    <string name="botao_parar_gravacao">PARAR</string>
+    <string name="botao_pix_desenvolvedor">AJUDE O DESENVOLVEDOR</string>
+</resources>

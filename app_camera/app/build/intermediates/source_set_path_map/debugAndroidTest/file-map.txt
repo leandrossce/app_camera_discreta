@@ -1,0 +1,4 @@
+com.capongasoftware.cameradiscreta.test.app-androidTest-0 C:\Users\leand\Downloads\app_camera\app_camera\app\build\generated\res\resValues\androidTest\debug
+com.capongasoftware.cameradiscreta.test.app-mergeDebugAndroidTestResources-1 C:\Users\leand\Downloads\app_camera\app_camera\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.capongasoftware.cameradiscreta.test.app-mergeDebugAndroidTestResources-2 C:\Users\leand\Downloads\app_camera\app_camera\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.capongasoftware.cameradiscreta.test.app-merged_res-3 C:\Users\leand\Downloads\app_camera\app_camera\app\build\intermediates\merged_res\debugAndroidTest

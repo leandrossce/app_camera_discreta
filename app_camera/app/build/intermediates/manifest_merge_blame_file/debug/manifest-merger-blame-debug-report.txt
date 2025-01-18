@@ -1,0 +1,137 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.capongasoftware.cameradiscreta"
+4    android:versionCode="3"
+5    android:versionName="1.0.3" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- ========== PERMISSÕES GERAIS ========== -->
+12
+13
+14    <!-- Permissão de câmera normal -->
+15    <uses-permission android:name="android.permission.CAMERA" />
+15-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:8:5-9:71
+15-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:8:22-62
+16
+17    <!-- Permissão para gravar áudio -->
+18    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+18-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:12:5-71
+18-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:12:22-68
+19
+20    <!-- Permissão para gravar em Movies (pasta pública) em versões < 29 -->
+21    <uses-permission
+21-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:15:5-17:38
+22        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+22-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:16:9-65
+23        android:maxSdkVersion="28" />
+23-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:17:9-35
+24    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+24-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:18:5-80
+24-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:18:22-77
+25
+26    <!-- Permissão antiga de foreground service (para Android 9/10) -->
+27    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+27-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:21:5-77
+27-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:21:22-74
+28
+29    <!-- ========== PERMISSÕES ESPECÍFICAS (Android 14+) ========== -->
+30    <!-- Para iniciar FGS usando microfone em targetSdk=34+ -->
+31    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+31-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:25:5-88
+31-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:25:22-85
+32    <!-- Para iniciar FGS usando câmera em targetSdk=34+ (se necessário) -->
+33    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+33-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:27:5-84
+33-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:27:22-81
+34
+35    <permission
+35-->[androidx.core:core:1.9.0] C:\Users\leand\.gradle\caches\transforms-3\587c5c8f84760f187573d8815f911080\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+36        android:name="com.capongasoftware.cameradiscreta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+36-->[androidx.core:core:1.9.0] C:\Users\leand\.gradle\caches\transforms-3\587c5c8f84760f187573d8815f911080\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+37        android:protectionLevel="signature" />
+37-->[androidx.core:core:1.9.0] C:\Users\leand\.gradle\caches\transforms-3\587c5c8f84760f187573d8815f911080\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+38
+39    <uses-permission android:name="com.capongasoftware.cameradiscreta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+39-->[androidx.core:core:1.9.0] C:\Users\leand\.gradle\caches\transforms-3\587c5c8f84760f187573d8815f911080\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+39-->[androidx.core:core:1.9.0] C:\Users\leand\.gradle\caches\transforms-3\587c5c8f84760f187573d8815f911080\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+40
+41    <application
+41-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:29:5-57:15
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.9.0] C:\Users\leand\.gradle\caches\transforms-3\587c5c8f84760f187573d8815f911080\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+43        android:debuggable="true"
+44        android:extractNativeLibs="true"
+45        android:icon="@mipmap/ic_launcher"
+45-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:31:9-43
+46        android:label="Discreta"
+46-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:30:9-33
+47        android:requestLegacyExternalStorage="true"
+47-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:34:9-52
+48        android:roundIcon="@mipmap/ic_launcher_round"
+48-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:32:9-54
+49        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+49-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:33:9-65
+50
+51        <!-- Necessário no Android 10 (API 29) para manter acesso legado à pasta pública -->
+52
+53        <activity
+53-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:38:5-47:16
+54            android:name="com.capongasoftware.cameradiscreta.MainActivity"
+54-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:39:9-37
+55            android:exported="true"
+55-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:40:9-32
+56            android:screenOrientation="portrait" >
+56-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:41:9-45
+57            <intent-filter>
+57-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:43:9-46:25
+58                <action android:name="android.intent.action.MAIN" />
+58-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:44:13-65
+58-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:44:21-62
+59
+60                <category android:name="android.intent.category.LAUNCHER" />
+60-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:45:13-73
+60-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:45:23-70
+61            </intent-filter>
+62        </activity>
+63
+64        <!--
+65         Declaração do Service em Foreground.
+66         "camera|microphone" exige as permissões FOREGROUND_SERVICE_CAMERA e FOREGROUND_SERVICE_MICROPHONE
+67         ao rodar em targetSdk=34 (Android 14).
+68        -->
+69        <service
+69-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:52:5-56:54
+70            android:name="com.capongasoftware.cameradiscreta.VideoRecordingService"
+70-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:53:9-46
+71            android:exported="false"
+71-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:54:9-33
+72            android:foregroundServiceType="camera|microphone" />
+72-->C:\Users\leand\Downloads\app_camera\app_camera\app\src\main\AndroidManifest.xml:55:9-58
+73
+74        <provider
+74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+75            android:name="androidx.startup.InitializationProvider"
+75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+76            android:authorities="com.capongasoftware.cameradiscreta.androidx-startup"
+76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+77            android:exported="false" >
+77-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+78            <meta-data
+78-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+79                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+79-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+80                android:value="androidx.startup" />
+80-->[androidx.emoji2:emoji2:1.2.0] C:\Users\leand\.gradle\caches\transforms-3\d66c2061a5a884677da87114085c13d7\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+81            <meta-data
+81-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\leand\.gradle\caches\transforms-3\a964a433fde842389437023dfdc1ad92\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+82                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+82-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\leand\.gradle\caches\transforms-3\a964a433fde842389437023dfdc1ad92\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+83                android:value="androidx.startup" />
+83-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\leand\.gradle\caches\transforms-3\a964a433fde842389437023dfdc1ad92\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+84        </provider>
+85    </application>
+86
+87</manifest>

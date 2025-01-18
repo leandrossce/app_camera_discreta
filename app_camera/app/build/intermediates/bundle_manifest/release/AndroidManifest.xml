@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.capongasoftware.cameradiscreta"
+    android:versionCode="3"
+    android:versionName="1.0.3" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="34" />
+
+    <!-- ========== PERMISSÕES GERAIS ========== -->
+
+
+    <!-- Permissão de câmera normal -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Permissão para gravar áudio -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Permissão para gravar em Movies (pasta pública) em versões < 29 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Permissão antiga de foreground service (para Android 9/10) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- ========== PERMISSÕES ESPECÍFICAS (Android 14+) ========== -->
+    <!-- Para iniciar FGS usando microfone em targetSdk=34+ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <!-- Para iniciar FGS usando câmera em targetSdk=34+ (se necessário) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+
+    <permission
+        android:name="com.capongasoftware.cameradiscreta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.capongasoftware.cameradiscreta.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:extractNativeLibs="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Discreta"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+
+        <!-- Necessário no Android 10 (API 29) para manter acesso legado à pasta pública -->
+
+        <activity
+            android:name="com.capongasoftware.cameradiscreta.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!--
+         Declaração do Service em Foreground.
+         "camera|microphone" exige as permissões FOREGROUND_SERVICE_CAMERA e FOREGROUND_SERVICE_MICROPHONE
+         ao rodar em targetSdk=34 (Android 14).
+        -->
+        <service
+            android:name="com.capongasoftware.cameradiscreta.VideoRecordingService"
+            android:exported="false"
+            android:foregroundServiceType="camera|microphone" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.capongasoftware.cameradiscreta.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

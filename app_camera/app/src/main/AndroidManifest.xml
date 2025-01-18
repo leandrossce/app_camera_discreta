@@ -1,0 +1,58 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.capongasoftware.cameradiscreta">
+
+    <!-- ========== PERMISSÕES GERAIS ========== -->
+
+    <!-- Permissão de câmera normal -->
+    <uses-permission android:name="android.permission.CAMERA"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+
+    <!-- Permissão para gravar áudio -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Permissão para gravar em Movies (pasta pública) em versões < 29 -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Permissão antiga de foreground service (para Android 9/10) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <!-- ========== PERMISSÕES ESPECÍFICAS (Android 14+) ========== -->
+    <!-- Para iniciar FGS usando microfone em targetSdk=34+ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <!-- Para iniciar FGS usando câmera em targetSdk=34+ (se necessário) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA" />
+
+    <application
+        android:label="Discreta"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:requestLegacyExternalStorage="true">
+    <!-- Necessário no Android 10 (API 29) para manter acesso legado à pasta pública -->
+
+
+    <activity
+        android:name=".MainActivity"
+        android:exported="true"
+        android:screenOrientation="portrait">
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+    <!-- Declaração do Service em Foreground.
+         "camera|microphone" exige as permissões FOREGROUND_SERVICE_CAMERA e FOREGROUND_SERVICE_MICROPHONE
+         ao rodar em targetSdk=34 (Android 14). -->
+    <service
+        android:name=".VideoRecordingService"
+        android:exported="false"
+        android:foregroundServiceType="camera|microphone"
+        tools:ignore="ForegroundServicePermission" />
+</application>
+    </manifest>
